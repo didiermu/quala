@@ -39,6 +39,5 @@ export default {
     server: {
         port: 8080,
         hot: true,
-        origin: "http://127.0.0.1:8080",
     },
 };
