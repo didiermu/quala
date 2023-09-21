@@ -1,0 +1,68 @@
+.bienvenida {
+    background: var(--color-primario-1);
+    section {
+        height: max(768px, 100vh);
+        display: grid;
+        place-content: center;
+        place-items: center;
+        color: var(--color-blanco-1);
+
+        img {
+            width: 230px;
+            margin-bottom: 54px;
+        }
+
+        h1 {
+            @include text-lg-36;
+
+            span {
+                color: var(--color-secundario-1);
+            }
+        }
+
+        a {
+            @include text-lg-44;
+            width: 100px;
+            height: 100px;
+            display: grid;
+            place-content: center;
+            text-decoration: none;
+
+            &#si {
+                background: url(../img/back-button.png) no-repeat center /
+                    contain;
+                color: var(--color-primario-2);
+            }
+        }
+
+        .checkbox {
+            display: flex;
+            align-items: center;
+            column-gap: 8px;
+        }
+        input {
+            width: 32px;
+            height: 32px;
+        }
+
+        label {
+            @include text-sm-16;
+            cursor: pointer;
+        }
+    }
+
+    &--opciones {
+        display: flex;
+        align-items: center;
+        column-gap: 40px;
+        margin: 48px auto 84px;
+    }
+}
+
+@media (width < 768px) {
+    .bienvenida {
+        section {
+            height: max(640px, 100vh);
+        }
+    }
+}

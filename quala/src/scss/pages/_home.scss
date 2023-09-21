@@ -1,0 +1,660 @@
+.home {
+    .hero {
+        position: relative;
+
+        &--latas {
+            position: absolute;
+            top: 30px;
+            right: 114px;
+            display: block;
+            width: 40%;
+            z-index: 1;
+        }
+
+        &--info {
+            position: absolute;
+            bottom: calc(70px + 290 * ((100vw - 1280px) / 1920));
+            right: calc(120px + 260 * ((100vw - 1280px) / 1920));
+            display: grid;
+            place-content: center;
+            place-items: center;
+            width: min(560px, 38%);
+
+            &__text {
+                position: absolute;
+                top: 90px;
+                display: grid;
+                place-items: center;
+
+                h1 {
+                    color: var(--color-blanco-1);
+                    text-align: center;
+                    @include text-lg-36;
+                    text-transform: uppercase;
+
+                    span {
+                        color: var(--color-secundario-1);
+                    }
+                }
+
+                h5 {
+                    margin-top: 16px;
+                    color: var(--color-blanco-1);
+                    text-align: center;
+                    @include text-md-22;
+                    font-family: var(--font-primaria-regular);
+                }
+            }
+
+            img {
+                width: 100%;
+            }
+
+            #arrow {
+                width: 30px;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .sabores {
+        height: var(--height-section);
+        background: url(../img/back-playa.jpg) no-repeat center / cover fixed;
+        position: relative;
+        overflow: hidden;
+
+        @keyframes bubbles {
+            0% {
+                left: 0%;
+            }
+            25% {
+                left: 15%;
+            }
+            75% {
+                left: 10%;
+            }
+            100% {
+                bottom: 100%;
+                left: 0%;
+            }
+        }
+
+        @keyframes bubbles2 {
+            0% {
+                right: 0%;
+            }
+            25% {
+                right: 15%;
+            }
+            75% {
+                right: 10%;
+            }
+            100% {
+                bottom: 100%;
+                right: 0%;
+            }
+        }
+
+        @keyframes bubbles3 {
+            0% {
+                left: 0%;
+            }
+            25% {
+                left: 15%;
+            }
+            75% {
+                left: -15%;
+            }
+            100% {
+                bottom: 100%;
+                left: 0%;
+            }
+        }
+
+        [class*="burbujas"] {
+            position: absolute;
+            bottom: 0;
+
+            &.burbujas-1 {
+                animation: bubbles infinite 2.5s linear forwards;
+                width: 80%;
+                left: 0;
+            }
+            &.burbujas-2 {
+                width: 90%;
+                right: 0;
+                animation: bubbles2 infinite 3s linear forwards;
+            }
+            &.burbujas-3 {
+                width: 100%;
+                left: 0;
+                animation: bubbles3 infinite 3s linear forwards;
+            }
+        }
+
+        &__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.3;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        &--textura {
+            width: min(34vw, 500px);
+            display: grid;
+            place-items: center;
+
+            h3 {
+                color: var(--color-blanco-1);
+                @include text-lg-32;
+                position: absolute;
+                text-transform: uppercase;
+                margin-top: 35px;
+
+                span {
+                    color: var(--color-secundario-1);
+                }
+            }
+        }
+
+        &--slide {
+            height: var(--height-section);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .row {
+                width: 100%;
+                max-width: 1140px;
+                align-items: center;
+                justify-content: space-evenly;
+
+                & > * {
+                    display: grid;
+                    place-content: center;
+                    position: relative;
+                }
+
+                .col-lg-5 {
+                    row-gap: 28px;
+                }
+            }
+
+            .etiqueta-sabor {
+                max-width: 240px;
+            }
+
+            @keyframes lata {
+                0% {
+                    transform: translate(0px, 50px);
+                }
+
+                50% {
+                    transform: translate(0px);
+                }
+
+                100% {
+                    transform: translate(0px, 50px);
+                }
+            }
+
+            .img-lata {
+                width: min(18vw, 280px);
+                animation: lata infinite 7s ease-in-out forwards;
+            }
+
+            p {
+                @include text-md-22;
+                text-align: justify;
+                width: 80%;
+                color: var(--color-primario-1);
+                text-transform: uppercase;
+            }
+        }
+
+        #slide-blueberry {
+            [class*="fruta"] {
+                &.fruta-b1 {
+                    width: min(18vw, 230px);
+                    top: 60px;
+                    left: 20px;
+                    filter: blur(2px);
+                }
+                &.fruta-b2 {
+                    width: min(18vw, 130px);
+                    bottom: 0;
+                    right: 50px;
+                }
+                &.fruta-b3 {
+                    width: min(18vw, 230px);
+                    top: 170px;
+                    right: 80px;
+                    z-index: -1;
+                }
+            }
+        }
+
+        #slide-durazno {
+            .row {
+                flex-direction: row-reverse;
+            }
+
+            [class*="fruta"] {
+                &.fruta-b1 {
+                    width: 200px;
+                    top: 30px;
+                    left: 0px;
+                }
+                &.fruta-b2 {
+                    width: 250px;
+                    bottom: -70px;
+                    right: -10px;
+                }
+            }
+        }
+
+        #slide-lemon {
+            [class*="fruta"] {
+                &.fruta-b1 {
+                    width: min(18vw, 230px);
+                    top: 30px;
+                    left: 0px;
+                }
+                &.fruta-b2 {
+                    width: min(20vw, 290px);
+                    bottom: -20px;
+                    right: -60px;
+                }
+            }
+        }
+
+        [class*="fruta"] {
+            position: absolute;
+
+            @keyframes fruta1 {
+                0% {
+                    transform: translate(10px, 50px);
+                }
+
+                50% {
+                    transform: translate(0px);
+                }
+
+                100% {
+                    transform: translate(10px, 50px);
+                }
+            }
+            @keyframes fruta2 {
+                0% {
+                    transform: translate(-10px, 50px);
+                }
+
+                50% {
+                    transform: translate(0px);
+                }
+
+                100% {
+                    transform: translate(-10px, 50px);
+                }
+            }
+            @keyframes fruta3 {
+                0% {
+                    transform: translate(10px, 40px);
+                }
+
+                50% {
+                    transform: translate(0px);
+                }
+
+                100% {
+                    transform: translate(10px, 40px);
+                }
+            }
+
+            &.fruta-b1 {
+                animation: fruta1 infinite 6s ease-in-out forwards;
+            }
+            &.fruta-b2 {
+                animation: fruta2 infinite 5s ease-in-out forwards;
+            }
+            &.fruta-b3 {
+                animation: fruta3 infinite 6s ease-in-out forwards;
+            }
+
+            &.fruta-lemon {
+                top: calc(90px + 180 * ((100vw - 1280px) / 1920));
+                left: calc(350px + 780 * ((100vw - 1280px) / 1920));
+                width: min(18vw, 300px);
+                animation: fruta1 infinite 6s ease-in-out forwards;
+            }
+
+            &.fruta-burberry {
+                bottom: calc(120px + 110 * ((100vw - 1280px) / 1920));
+                left: calc(270px + 550 * ((100vw - 1280px) / 1920));
+                width: min(18vw, 350px);
+                animation: fruta2 infinite 5s ease-in-out forwards;
+            }
+            &.fruta-mango {
+                bottom: calc(140px + 250 * (100vw - 1280px) / 1920);
+                right: calc(260px + 720 * (100vw - 1280px) / 1920);
+                width: min(16vw, 250px);
+                animation: fruta3 infinite 6s ease-in-out forwards;
+            }
+        }
+    }
+
+    .categoria {
+        .swiper {
+            &-slide {
+                height: min(760px, 100vh);
+            }
+
+            #slide-tranqui {
+                .categoria__pleca {
+                    width: 380px;
+                    top: 160px;
+                    right: 50px;
+                }
+
+                h5 {
+                    top: 50px;
+                    left: 100px;
+                }
+            }
+        }
+
+        .latas-precio {
+            position: absolute;
+            bottom: -150px;
+            z-index: 1;
+            left: 0;
+            width: min(800px, 60%);
+            right: 0;
+            margin: auto;
+        }
+
+        &__desc {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 420px;
+            display: grid;
+            place-items: center;
+
+            img {
+                transform: rotateY(180deg) translateX(30px);
+            }
+
+            h4 {
+                @include text-lg-32;
+                color: var(--color-blanco-1);
+                position: absolute;
+                left: 90px;
+                text-transform: uppercase;
+                width: 70%;
+                top: 70px;
+                text-shadow: 3px 3px 0 var(--color-primario-1);
+
+                span {
+                    color: var(--color-secundario-1);
+                }
+            }
+        }
+        &__pleca {
+            position: absolute;
+            top: 190px;
+            right: calc(120px + 500 * ((100vw - 1280px) / 1920));
+            width: 290px;
+            display: grid;
+            place-items: center;
+
+            h5 {
+                @include text-lg-36;
+                color: var(--color-blanco-1);
+                position: absolute;
+                left: 90px;
+                text-transform: uppercase;
+                top: 32px;
+                transform: rotate(-10deg);
+                text-shadow: 3px 3px 0 var(--color-primario-1);
+
+                span {
+                    color: var(--color-secundario-1);
+                }
+            }
+        }
+    }
+
+    .partners {
+        background: var(--color-primario-1);
+        padding: 20px 0;
+    }
+}
+
+@media (width < 1024px) {
+    .home {
+        .hero {
+            // height: min(100vh, 800px);
+
+            img {
+                height: 100%;
+                object-fit: cover;
+                object-position: center top;
+            }
+
+            &--latas {
+                display: none;
+            }
+
+            &--info {
+                width: 100%;
+                right: 0;
+                bottom: 90px;
+
+                .hero--textura {
+                    display: none;
+                }
+
+                &__text {
+                    top: 0;
+                    position: relative;
+
+                    h1 {
+                        @include text-lg-32;
+                    }
+
+                    h5 {
+                        @include text-sm-18;
+                        margin-top: 0;
+                    }
+                }
+
+                #arrow {
+                    position: absolute;
+                    bottom: -50px;
+                    width: 24px;
+                    height: 24px;
+                    margin: 0;
+                }
+            }
+        }
+
+        .sabores {
+            // padding: 120px 0;
+            --height-section: min(650px, 140vh);
+
+            &--textura {
+                width: min(100vw, 500px);
+                overflow: clip;
+
+                img {
+                    transform: translateX(5%);
+                }
+                h3 {
+                    width: 60%;
+                    text-align: center;
+                }
+            }
+
+            &--slide {
+                .row {
+                    .col-lg-5 {
+                        position: absolute;
+                        height: 100vh;
+                    }
+                }
+
+                .img-lata {
+                    width: min(50vw, 280px);
+                    top: -40px;
+                    position: relative;
+                }
+
+                .etiqueta-sabor {
+                    position: absolute;
+                    top: 40px;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                }
+
+                p {
+                    position: absolute;
+                    bottom: 30px;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    text-align: center;
+                }
+            }
+
+            #slide-blueberry [class*="fruta"] {
+                &.fruta-b1 {
+                    width: min(40vw, 230px);
+                    z-index: -1;
+                }
+                &.fruta-b2 {
+                    width: min(20vw, 230px);
+                    bottom: 50px;
+                }
+                &.fruta-b3 {
+                    width: min(40vw, 230px);
+                    top: 120px;
+                    right: 40px;
+                }
+            }
+
+            #slide-durazno [class*="fruta"] {
+                &.fruta-b1 {
+                    width: min(40vw, 230px);
+                    z-index: -1;
+                }
+                &.fruta-b2 {
+                    width: min(50vw, 230px);
+                    bottom: 50px;
+                    right: -40px;
+                    filter: blur(2px);
+                }
+            }
+
+            #slide-lemon [class*="fruta"] {
+                &.fruta-b1 {
+                    width: min(40vw, 230px);
+                    z-index: -1;
+                }
+                &.fruta-b2 {
+                    width: min(60vw, 230px);
+                    bottom: 60px;
+                    right: -40px;
+                    z-index: -1;
+                    filter: blur(2px);
+                }
+            }
+
+            [class*="fruta"] {
+                &.fruta-lemon {
+                    top: calc(30px + 180 * (100vw - 360px) / 768);
+                    left: calc(-30px + 780 * (100vw - 360px) / 768);
+                    width: min(48vw, 300px);
+                }
+
+                &.fruta-burberry {
+                    bottom: calc(70px + 110 * (100vw - 360px) / 768);
+                    left: calc(-60px + 550 * (100vw - 360px) / 768);
+                    width: min(50vw, 350px);
+                }
+
+                &.fruta-mango {
+                    bottom: calc(100px + 250 * (100vw - 360px) / 768);
+                    right: calc(-30px + 720 * (100vw - 360px) / 768);
+                    width: min(40vw, 250px);
+                }
+            }
+        }
+
+        .categoria {
+            .swiper {
+                &-slide {
+                    height: min(530px, 100vh);
+
+                    .banner {
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center top;
+                    }
+                }
+
+                #slide-tranqui {
+                    .banner {
+                        object-position: center -30px;
+                    }
+                    .categoria__pleca {
+                        width: min(55vw, 300px);
+                        top: 210px;
+                        right: 0;
+
+                        h5 {
+                            top: 25px;
+                            left: 40px;
+                        }
+                    }
+                }
+            }
+
+            &__desc {
+                width: min(65vw, 300px);
+                overflow-x: clip;
+                top: 30px;
+
+                h4 {
+                    @include text-md-22;
+                    left: 16px;
+                    top: 30px;
+                    width: 80%;
+                }
+            }
+
+            &__pleca {
+                width: min(45vw, 300px);
+                right: 0;
+                top: 250px;
+
+                h5 {
+                    @include text-md-22;
+                    left: 50px;
+                    top: 15px;
+                }
+            }
+
+            .latas-precio {
+                bottom: -70px;
+                width: min(100vw, 410px);
+            }
+        }
+    }
+}

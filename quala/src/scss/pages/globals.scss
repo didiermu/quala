@@ -1,0 +1,49 @@
+& {
+    font-family: var(--font-primaria-bold);
+
+    &.hidden {
+        overflow: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li {
+        margin: 0;
+    }
+
+    .swiper {
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 34px;
+            height: 34px;
+
+            &::after {
+                content: url(../img/arrow.svg);
+            }
+        }
+
+        .swiper-button-next {
+            right: calc(40px + 400 * ((100vw - 1280px) / 1920));
+        }
+        .swiper-button-prev {
+            left: calc(40px + 400 * ((100vw - 1280px) / 1920));
+            transform: rotate(180deg);
+        }
+    }
+
+    @media (width < 1024px) {
+        .swiper {
+            .swiper-button-next {
+                right: 0;
+            }
+            .swiper-button-prev {
+                left: 0;
+            }
+        }
+    }
+}

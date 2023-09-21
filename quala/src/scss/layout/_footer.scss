@@ -1,0 +1,106 @@
+.footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    background: var(--color-primario-1);
+    padding: 20px 0;
+    z-index: 99;
+    // height: 170px;
+
+    &--partners {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 24px;
+
+        h5 {
+            @include text-sm-16;
+            color: var(--color-blanco-1);
+            text-transform: uppercase;
+            span {
+                color: var(--color-secundario-1);
+            }
+        }
+    }
+
+    &--logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 20px;
+
+        img {
+            width: 100%;
+            max-height: 60px;
+        }
+    }
+
+    &--legales {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & > * {
+            flex: 1 1 33.3%;
+        }
+        h6:first-child {
+            font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+                "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+            font-size: 10px;
+        }
+
+        h6,
+        a {
+            color: var(--color-blanco-1);
+            @include text-sm-14;
+            font-family: var(--font-secundaria-regular);
+        }
+
+        #disclaimer {
+            @include text-sm-16;
+            text-align: center;
+
+            span {
+                font-family: "Lucida Sans", "Lucida Sans Regular",
+                    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+                    sans-serif;
+                font-size: 10px;
+                display: block;
+            }
+        }
+    }
+    &--redes {
+        display: flex;
+        align-items: center;
+        column-gap: 16px;
+        justify-content: flex-end;
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+@media (width < 1024px) {
+    .footer {
+        position: relative;
+        padding-top: 8px;
+
+        &--partners {
+            flex-direction: column;
+            row-gap: 16px;
+
+            img {
+                max-height: 40px;
+            }
+        }
+
+        &--legales {
+            flex-direction: column;
+            row-gap: 12px;
+
+            h6:first-child {
+                order: 3;
+            }
+        }
+    }
+}

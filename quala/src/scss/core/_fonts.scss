@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "Bebas Neue";
+    src: url(../fonts/Bebas/Bebas-Neue-Pro-Regular.eot);
+    src: local("@"),
+        url(../fonts/Bebas/Bebas-Neue-Pro-Regular.ttf) format("truetype"),
+        url(../fonts/Bebas/Bebas-Neue-Pro-Regular.otf) format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Bebas Neue Bold";
+    src: url(../fonts/Bebas/Bebas-Neue-Pro-Bold.eot);
+    src: local("@"),
+        url(../fonts/Bebas/Bebas-Neue-Pro-Bold.ttf) format("truetype"),
+        url(../fonts/Bebas/Bebas-Neue-Pro-Bold.otf) format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gotham Black";
+    src: url(../fonts/Gotham-Black/Gotham-Black.eot);
+    src: local("@"),
+        url(../fonts/Gotham-Black/Gotham-Black.ttf) format("truetype"),
+        url(../fonts/Gotham-Black/Gotham-Black.otf) format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
