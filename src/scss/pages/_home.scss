@@ -461,7 +461,7 @@
                 }
 
                 &__text {
-                    top: 0;
+                    top: calc(0px - 400 * (100vw - 360px) / 768);
                     position: relative;
 
                     h1 {
@@ -505,7 +505,7 @@
                 .row {
                     .col-lg-5 {
                         position: absolute;
-                        height: 100vh;
+                        height: min(650px, 100vh);
                     }
                 }
 
@@ -634,13 +634,13 @@
                 h4 {
                     @include text-md-22;
                     left: 16px;
-                    top: 30px;
+                    top: calc(30px + 60 * (100vw - 360px) / 768);
                     width: 80%;
                 }
             }
 
             &__pleca {
-                width: min(45vw, 300px);
+                width: min(45vw, 180px);
                 right: 0;
                 top: 250px;
 
