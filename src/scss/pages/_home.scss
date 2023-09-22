@@ -491,6 +491,7 @@
             &--textura {
                 width: min(100vw, 500px);
                 overflow: clip;
+                position: relative;
 
                 img {
                     transform: translateX(5%);
@@ -498,6 +499,9 @@
                 h3 {
                     width: 60%;
                     text-align: center;
+                    left: 0;
+                    right: 0;
+                    margin: 30px auto 0;
                 }
             }
 
@@ -614,8 +618,8 @@
                         object-position: center -30px;
                     }
                     .categoria__pleca {
-                        width: min(55vw, 300px);
-                        top: 210px;
+                        width: min(55vw, 200px);
+                        top: calc(210px + 100 * (100vw - 360px) / 768);
                         right: 0;
 
                         h5 {
@@ -635,12 +639,12 @@
                     @include text-md-22;
                     left: 16px;
                     top: calc(30px + 60 * (100vw - 360px) / 768);
-                    width: 80%;
+                    width: 75%;
                 }
             }
 
             &__pleca {
-                width: min(45vw, 180px);
+                width: min(45vw, 160px);
                 right: 0;
                 top: 250px;
 

@@ -104,6 +104,10 @@ header {
 
 @media (width < 1024px) {
     header {
+        nav {
+            padding-top: 12px !important;
+        }
+
         .navbar-collapse {
             position: initial;
             .nav-items {
