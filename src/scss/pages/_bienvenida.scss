@@ -12,8 +12,11 @@
             margin-bottom: 54px;
         }
 
-        h1 {
+        h1,
+        h2 {
             @include text-lg-36;
+            text-transform: uppercase;
+            text-align: center;
 
             span {
                 color: var(--color-secundario-1);
@@ -56,6 +59,32 @@
         align-items: center;
         column-gap: 40px;
         margin: 48px auto 84px;
+    }
+
+    #no-validacion {
+        display: none;
+    }
+}
+
+.legales {
+    text-align: center;
+    padding: 64px 0;
+    text-transform: uppercase;
+    color: var(--color-primario-1);
+
+    h1 {
+        @include text-lg-36;
+        margin-bottom: 40px;
+    }
+
+    h4 {
+        @include text-md-22;
+        margin-bottom: 20px;
+    }
+
+    p {
+        @include text-sm-18;
+        margin-bottom: 20px;
     }
 }
 

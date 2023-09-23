@@ -10,6 +10,10 @@ export default {
             input: {
                 index: path.resolve(__dirname, "src/index.html"),
                 home: path.resolve(__dirname, "src/home.html"),
+                legales: path.resolve(
+                    __dirname,
+                    "src/aviso-de-privacidad.html"
+                ),
             },
             output: {
                 chunkFileNames: "js/[name]-[hash].js",
