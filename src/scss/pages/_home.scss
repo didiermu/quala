@@ -63,76 +63,8 @@
         position: relative;
         overflow: hidden;
 
-        @keyframes bubbles {
-            0% {
-                left: 0%;
-            }
-            25% {
-                left: 15%;
-            }
-            75% {
-                left: 10%;
-            }
-            100% {
-                bottom: 100%;
-                left: 0%;
-            }
-        }
-
-        @keyframes bubbles2 {
-            0% {
-                right: 0%;
-            }
-            25% {
-                right: 15%;
-            }
-            75% {
-                right: 10%;
-            }
-            100% {
-                bottom: 100%;
-                right: 0%;
-            }
-        }
-
-        @keyframes bubbles3 {
-            0% {
-                left: 0%;
-            }
-            25% {
-                left: 15%;
-            }
-            75% {
-                left: -15%;
-            }
-            100% {
-                bottom: 100%;
-                left: 0%;
-            }
-        }
-
-        [class*="burbujas"] {
-            position: absolute;
-            bottom: 0;
-
-            &.burbujas-1 {
-                animation: bubbles infinite 2.5s linear forwards;
-                width: 80%;
-                left: 0;
-            }
-            &.burbujas-2 {
-                width: 90%;
-                right: 0;
-                animation: bubbles2 infinite 3s linear forwards;
-            }
-            &.burbujas-3 {
-                width: 100%;
-                left: 0;
-                animation: bubbles3 infinite 3s linear forwards;
-            }
-        }
-
-        &__overlay {
+        &__overlay,
+        &__overlay2 {
             position: absolute;
             top: 0;
             left: 0;
@@ -140,8 +72,12 @@
             z-index: -1;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             display: block;
+        }
+
+        &__overlay2 {
+            object-fit: cover;
         }
 
         &--textura {
@@ -371,7 +307,7 @@
         .latas-precio {
             position: absolute;
             bottom: -150px;
-            z-index: 1;
+            z-index: 2;
             left: 0;
             width: min(800px, 60%);
             right: 0;
@@ -385,6 +321,8 @@
             width: 420px;
             display: grid;
             place-items: center;
+            overflow: hidden;
+            z-index: 2;
 
             img {
                 transform: rotateY(180deg) translateX(30px);
@@ -436,7 +374,7 @@
     }
 }
 
-@media (width < 1024px) {
+@media (max-width: 1024px) {
     .home {
         .hero {
             // height: min(100vh, 800px);
@@ -496,6 +434,7 @@
                 img {
                     transform: translateX(5%);
                 }
+
                 h3 {
                     width: 60%;
                     text-align: center;
@@ -535,6 +474,10 @@
                     margin: auto;
                     text-align: center;
                 }
+            }
+
+            &__overlay {
+                object-fit: cover;
             }
 
             #slide-blueberry [class*="fruta"] {
@@ -646,7 +589,7 @@
             &__pleca {
                 width: min(45vw, 160px);
                 right: 0;
-                top: 250px;
+                top: 200px;
 
                 h5 {
                     @include text-md-22;

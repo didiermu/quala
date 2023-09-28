@@ -20,15 +20,18 @@ header {
 
     .navbar-collapse {
         background: var(--color-primario-1);
-        position: relative;
-        top: 12px;
+        position: absolute;
+        top: 50px;
+        width: 100%;
+        overflow-x: hidden;
 
         .nav-items {
-            height: calc(100vh - 50px);
+            padding: 32px 0;
+            height: calc(100vh);
             display: flex;
-            place-items: center;
+            align-items: center;
             flex-flow: row wrap;
-            place-content: center;
+            overflow-y: scroll;
 
             ul {
                 display: grid;
@@ -83,7 +86,7 @@ header {
         }
 
         .navbar-disclaimer {
-            margin-top: 64px;
+            margin: 64px auto 32px;
             h6 {
                 text-align: center;
                 @include text-sm-16;
@@ -102,7 +105,7 @@ header {
     }
 }
 
-@media (width < 1024px) {
+@media (max-width: 1024px) {
     header {
         nav {
             padding-top: 12px !important;
