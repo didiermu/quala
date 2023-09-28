@@ -3,48 +3,41 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
         <title>+Kool</title>
-      <script type="module" crossorigin src="./js/main-bbaf8f2b.js"></script>
-      <link rel="stylesheet" href="./css/main-16f7468c.css">
+      <script type="module" crossorigin src="./js/index-421289e3.js"></script>
+      <link rel="modulepreload" crossorigin href="./js/main-7008f3b2.js">
+      <link rel="stylesheet" href="./css/main-0fad9917.css">
     </head>
     <body>
         <main class="bienvenida">
-            <section>
+            <section id="validacion">
                 <picture>
                     <img src="img/Logo-KOOL-blue-b.svg" alt="" />
                 </picture>
                 <h1>¿Eres <span> mayor</span> de edad?</h1>
                 <div class="bienvenida--opciones">
                     <a id="si" href="home.html"> SÍ </a>
-                    <a
-                        id="no"
-                        href="#!"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >NO</a
-                    >
+                    <a href="#!" id="no">NO</a>
                 </div>
                 <div class="checkbox">
                     <input type="checkbox" name="" id="check-edad" />
                     <label for="check-edad">Recordarme la próxima vez</label>
                 </div>
             </section>
+
+            <section id="no-validacion">
+                <picture>
+                    <img src="img/Logo-KOOL-blue-b.svg" alt="" />
+                </picture>
+                <h2>
+                    Debes ser <span> mayor</span> de edad para <br />
+                    navegar en este sitio
+                </h2>
+            </section>
         </main>
 
         
-        <script>
-            const checkbox = document.querySelector("#check-edad");
-            checkbox.addEventListener("click", (e) => {
-                if (checkbox.checked) {
-                    localStorage.setItem("edad", true);
-                } else {
-                    localStorage.removeItem("edad");
-                }
-            });
-
-            if (localStorage.getItem("edad")) {
-                window.location.href = "home.html";
-            }
-        </script>
+        
     </body>
 </html>
